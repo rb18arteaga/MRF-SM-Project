@@ -1,0 +1,20 @@
+Results;Type;Mesh;W (rad/s);Data;RelativeErrorRespectToExperimental;Comparative
+Cd;Experimental;;;0.44;;0
+Cl;Experimental;;;0.164;;0
+C_D_mw;MW;OldMedium;;0.382;13.18181818;1
+C_L_mw;MW;OldMedium;;0.109;33.53658537;1
+C_D_mw;MW;MediumNew;;0.402;8.636363636;1
+C_L_mw;MW;MediumNew;;0.131;20.12195122;1
+C_D_mw;MW;Coarse;;0.378;14.09090909;1
+C_L_mw;MW;Coarse;;0.072;56.09756098;1
+C_D_mw;MW;Fine;;0.412;6.363636364;1
+C_L_mw;MW;Fine;;0.063;61.58536585;1
+C_D_sm;SlidingMesh;;;0.375;14.77272727;1
+C_L_sm;SlidingMesh;;;0.024;85.36585366;1
+C_D_mrf;MRF;;;0.362;17.72727273;1
+C_L_mrf;MRF;;;0.0034;97.92682927;1
+C_D_mrf;MRF-2;;31.7;0.074168561;83.14350894;no
+C_D_mrf;MRF-3;;44.1;0.146356706;10.75810612;no
+C_D_mrf;MRF-1;;69.7;0.386940824;12.05890357;2
+C_D_mrf;MRF-4;;99.5;0.721751463;340.0923552;no
+C_D_SM;SM-brakes;;69.7;0.3797;13.7;2

@@ -1,0 +1,168 @@
+clc 
+clear all
+%% Read data MRF
+%MRF1 
+MRF1_CD_ty =  readmatrix("MRF1-69.7\report-coef-drag-tyre-rfile.out", FileType="text");
+MRF1_CD_tyrim =  readmatrix("MRF1-69.7\report-coef-drag-tyre-rim-rfile.out", FileType="text");
+MRF1_CL_ty =  readmatrix("MRF1-69.7\report-coef-lift-tyre-rfile.out", FileType="text");
+MRF1_CL_tyrim =  readmatrix("MRF1-69.7\report-coef-lift-tyre-rim-rfile.out", FileType="text");
+
+MRF1_maxT_soliddisc =  readmatrix("MRF1-69.7\report-exp-max-sttemp-discsolid-rfile.out", FileType="text");
+
+MRF1_heatflux_disczones =  readmatrix("MRF1-69.7\report-sum-heatflux-disczones-rfile.out", FileType="text");
+MRF1_heatflux_soliddisc =  readmatrix("MRF1-69.7\report-sum-heatflux-soliddisc-rfile.out", FileType="text");
+
+MRF1_savgT_soliddisc =  readmatrix("MRF1-69.7\report-surf-arweavg-sttemp-soliddisc-rfile.out", FileType="text");
+
+MRF1_savgV_vanes =  readmatrix("MRF1-69.7\report-surf-arweavg-vanes-velocity-rfile.out", FileType="text");
+
+MRF1_savg_HTC_soliddisc =  readmatrix("MRF1-69.7\report-surf-arweavg-wallflux-shtc-disc-solid-rfile.out", FileType="text");
+MRF1_savg_HTC_disczones = readmatrix("MRF1-69.7\report-surfarweavg-wallflux-shtc-mid-disc-rfile.out", FileType="text");
+
+MRF1_vavgT_soliddisc =  readmatrix("MRF1-69.7\report-volavg-statemp-soliddisc-rfile.out", FileType="text");
+MRF1_vmaxT_pads12 =  readmatrix("MRF1-69.7\report-volmax-statemp-pads12-rfile.out", FileType="text");
+
+
+%% MRF2
+ 
+MRF2_CD_ty =  readmatrix("MRF2-31.7\report-coef-drag-tyre-rfile.out", FileType="text");
+MRF2_CD_tyrim =  readmatrix("MRF2-31.7\report-coef-drag-tyre-rim-rfile.out", FileType="text");
+MRF2_CL_ty =  readmatrix("MRF2-31.7\report-coef-lift-tyre-rfile.out", FileType="text");
+MRF2_CL_tyrim =  readmatrix("MRF2-31.7\report-coef-lift-tyre-rim-rfile.out", FileType="text");
+
+MRF2_maxT_soliddisc =  readmatrix("MRF2-31.7\report-exp-max-sttemp-discsolid-rfile.out", FileType="text");
+
+MRF2_heatflux_disczones =  readmatrix("MRF2-31.7\report-sum-heatflux-disczones-rfile.out", FileType="text");
+MRF2_heatflux_soliddisc =  readmatrix("MRF2-31.7\report-sum-heatflux-soliddisc-rfile.out", FileType="text");
+
+MRF2_savgT_soliddisc =  readmatrix("MRF2-31.7\report-surf-arweavg-sttemp-soliddisc-rfile.out", FileType="text");
+
+MRF2_savgV_vanes =  readmatrix("MRF2-31.7\report-surf-arweavg-vanes-velocity-rfile.out", FileType="text");
+
+MRF2_savg_HTC_soliddisc =  readmatrix("MRF2-31.7\report-surf-arweavg-wallflux-shtc-disc-solid-rfile.out", FileType="text");
+MRF2_savg_HTC_disczones = readmatrix("MRF2-31.7\report-surfarweavg-wallflux-shtc-mid-disc-rfile.out", FileType="text");
+
+MRF2_vavgT_soliddisc =  readmatrix("MRF2-31.7\report-volavg-statemp-soliddisc-rfile.out", FileType="text");
+MRF2_vmaxT_pads12 =  readmatrix("MRF2-31.7\report-volmax-statemp-pads12-rfile.out", FileType="text");
+
+%% MRF3
+ 
+MRF3_CD_ty =  readmatrix("MRF3-44.1\report-coef-drag-tyre-rfile.out", FileType="text");
+MRF3_CD_tyrim =  readmatrix("MRF3-44.1\report-coef-drag-tyre-rim-rfile.out", FileType="text");
+MRF3_CL_ty =  readmatrix("MRF3-44.1\report-coef-lift-tyre-rfile.out", FileType="text");
+MRF3_CL_tyrim =  readmatrix("MRF3-44.1\report-coef-lift-tyre-rim-rfile.out", FileType="text");
+
+MRF3_maxT_soliddisc =  readmatrix("MRF3-44.1\report-exp-max-sttemp-discsolid-rfile.out", FileType="text");
+
+MRF3_heatflux_disczones =  readmatrix("MRF3-44.1\report-sum-heatflux-disczones-rfile.out", FileType="text");
+MRF3_heatflux_soliddisc =  readmatrix("MRF3-44.1\report-sum-heatflux-soliddisc-rfile.out", FileType="text");
+
+MRF3_savgT_soliddisc =  readmatrix("MRF3-44.1\report-surf-arweavg-sttemp-soliddisc-rfile.out", FileType="text");
+
+MRF3_savgV_vanes =  readmatrix("MRF3-44.1\report-surf-arweavg-vanes-velocity-rfile.out", FileType="text");
+
+MRF3_savg_HTC_soliddisc =  readmatrix("MRF3-44.1\report-surf-arweavg-wallflux-shtc-disc-solid-rfile.out", FileType="text");
+MRF3_savg_HTC_disczones = readmatrix("MRF3-44.1\report-surfarweavg-wallflux-shtc-mid-disc-rfile.out", FileType="text");
+
+MRF3_vavgT_soliddisc =  readmatrix("MRF3-44.1\report-volavg-statemp-soliddisc-rfile.out", FileType="text");
+MRF3_vmaxT_pads12 =  readmatrix("MRF3-44.1\report-volmax-statemp-pads12-rfile.out", FileType="text");
+
+%% MRF4
+
+MRF4_CD_ty =  readmatrix("MRF4-95.1\report-coef-drag-tyre-rfile.out", FileType="text");
+MRF4_CD_tyrim =  readmatrix("MRF4-95.1\report-coef-drag-tyre-rim-rfile.out", FileType="text");
+MRF4_CL_ty =  readmatrix("MRF4-95.1\report-coef-lift-tyre-rfile.out", FileType="text");
+MRF4_CL_tyrim =  readmatrix("MRF4-95.1\report-coef-lift-tyre-rim-rfile.out", FileType="text");
+
+MRF4_maxT_soliddisc =  readmatrix("MRF4-95.1\report-exp-max-sttemp-discsolid-rfile.out", FileType="text");
+
+MRF4_heatflux_disczones =  readmatrix("MRF4-95.1\report-sum-heatflux-disczones-rfile.out", FileType="text");
+MRF4_heatflux_soliddisc =  readmatrix("MRF4-95.1\report-sum-heatflux-soliddisc-rfile.out", FileType="text");
+
+MRF4_savgT_soliddisc =  readmatrix("MRF4-95.1\report-surf-arweavg-sttemp-soliddisc-rfile.out", FileType="text");
+
+MRF4_savgV_vanes =  readmatrix("MRF4-95.1\report-surf-arweavg-vanes-velocity-rfile.out", FileType="text");
+
+MRF4_savg_HTC_soliddisc =  readmatrix("MRF4-95.1\report-surf-arweavg-wallflux-shtc-disc-solid-rfile.out", FileType="text");
+MRF4_savg_HTC_disczones = readmatrix("MRF4-95.1\report-surfarweavg-wallflux-shtc-mid-disc-rfile.out", FileType="text");
+
+MRF4_vavgT_soliddisc =  readmatrix("MRF4-95.1\report-volavg-statemp-soliddisc-rfile.out", FileType="text");
+MRF4_vmaxT_pads12 =  readmatrix("MRF4-95.1\report-volmax-statemp-pads12-rfile.out", FileType="text");
+
+%% SM 69.7
+
+SM_CD_ty =  readmatrix("SM\report-coef-drag-tyre-rfile.out", FileType="text");
+SM_CD_tyrim =  readmatrix("SM\report-coef-drag-tyre-rim-rfile.out", FileType="text");
+SM_CL_ty =  readmatrix("SM\report-coef-lift-tyre-rfile.out", FileType="text");
+SM_CL_tyrim =  readmatrix("SM\report-coef-lift-tyre-rim-rfile.out", FileType="text");
+
+SM_maxT_soliddisc =  readmatrix("SM\report-exp-max-sttemp-discsolid-rfile.out", FileType="text");
+
+SM_heatflux_disczones =  readmatrix("SM\report-sum-heatflux-disczones-rfile.out", FileType="text");
+SM_heatflux_soliddisc =  readmatrix("SM\report-sum-heatflux-soliddisc-rfile.out", FileType="text");
+
+SM_savgT_soliddisc =  readmatrix("SM\report-surf-arweavg-sttemp-soliddisc-rfile.out", FileType="text");
+
+SM_savgV_vanes =  readmatrix("SM\report-surf-arweavg-vanes-velocity-rfile.out", FileType="text");
+
+SM_savg_HTC_soliddisc =  readmatrix("SM\report-surf-arweavg-wallflux-shtc-disc-solid-rfile.out", FileType="text");
+SM_savg_HTC_disczones = readmatrix("SM\report-surfarweavg-wallflux-shtc-mid-disc-rfile.out", FileType="text");
+
+SM_vavgT_soliddisc =  readmatrix("SM\report-volavg-statemp-soliddisc-rfile.out", FileType="text");
+SM_vmaxT_pads12 =  readmatrix("SM\report-volmax-statemp-pads12-rfile.out", FileType="text");
+
+
+
+%% Variables
+
+variables = {
+    'MRF1_CD_ty', 'MRF1_CD_tyrim', 'MRF1_CL_ty', 'MRF1_CL_tyrim', ...
+    'MRF1_maxT_soliddisc', 'MRF1_heatflux_disczones', 'MRF1_heatflux_soliddisc', ...
+    'MRF1_savgT_soliddisc', 'MRF1_savgV_vanes', 'MRF1_savg_HTC_soliddisc', ...
+    'MRF1_savg_HTC_disczones', 'MRF1_vavgT_soliddisc', 'MRF1_vmaxT_pads12', ...
+    'MRF2_CD_ty', 'MRF2_CD_tyrim', 'MRF2_CL_ty', 'MRF2_CL_tyrim', ...
+    'MRF2_maxT_soliddisc', 'MRF2_heatflux_disczones', 'MRF2_heatflux_soliddisc', ...
+    'MRF2_savgT_soliddisc', 'MRF2_savgV_vanes', 'MRF2_savg_HTC_soliddisc', ...
+    'MRF2_savg_HTC_disczones', 'MRF2_vavgT_soliddisc', 'MRF2_vmaxT_pads12', ...
+    'MRF3_CD_ty', 'MRF3_CD_tyrim', 'MRF3_CL_ty', 'MRF3_CL_tyrim', ...
+    'MRF3_maxT_soliddisc', 'MRF3_heatflux_disczones', 'MRF3_heatflux_soliddisc', ...
+    'MRF3_savgT_soliddisc', 'MRF3_savgV_vanes', 'MRF3_savg_HTC_soliddisc', ...
+    'MRF3_savg_HTC_disczones', 'MRF3_vavgT_soliddisc', 'MRF3_vmaxT_pads12', ...
+    'MRF4_CD_ty', 'MRF4_CD_tyrim', 'MRF4_CL_ty', 'MRF4_CL_tyrim', ...
+    'MRF4_maxT_soliddisc', 'MRF4_heatflux_disczones', 'MRF4_heatflux_soliddisc', ...
+    'MRF4_savgT_soliddisc', 'MRF4_savgV_vanes', 'MRF4_savg_HTC_soliddisc', ...
+    'MRF4_savg_HTC_disczones', 'MRF4_vavgT_soliddisc', 'MRF4_vmaxT_pads12',...
+    'MRF4_CD_ty', 'MRF4_CD_tyrim', 'MRF4_CL_ty', 'MRF4_CL_tyrim', ...
+    'MRF4_maxT_soliddisc', 'MRF4_heatflux_disczones', 'MRF4_heatflux_soliddisc', ...
+    'MRF4_savgT_soliddisc', 'MRF4_savgV_vanes', 'MRF4_savg_HTC_soliddisc', ...
+    'MRF4_savg_HTC_disczones', 'MRF4_vavgT_soliddisc', 'MRF4_vmaxT_pads12'
+};
+
+% Prealocar estructura para guardar promedios
+promedios = struct();
+
+% Calcular promedio de últimos 2000 datos (columna 2) para cada variable
+for i = 1:length(variables)
+    var_name = variables{i};
+    data = eval(var_name);  % Obtener datos de la variable actual
+    
+    % Verificar si hay al menos 2000 datos
+    if size(data, 1) >= 2000
+        ultimos_2000 = data(end-1999:end, 2);  % Últimos 2000 de columna 2
+        promedio = mean(ultimos_2000, 'omitnan');  % Calcula promedio (ignora NaN)
+        promedios.(var_name) = promedio;  % Guardar en estructura
+        fprintf('Promedio de últimos 2000 datos de %s: %.4f\n', var_name, promedio);
+    else
+        warning('%s tiene menos de 2000 datos. No se calcula promedio.', var_name);
+        promedios.(var_name) = NaN;
+    end
+end
+
+% Opcional: Convertir estructura a tabla para visualización
+tabla_promedios = struct2table(promedios);
+disp(tabla_promedios);
+
+% Transponer la tabla (convertir filas en columnas)
+tabla_promedios_vertical = rows2vars(tabla_promedios);
+
+writetable(tabla_promedios_vertical, 'promedios_resultados.csv');

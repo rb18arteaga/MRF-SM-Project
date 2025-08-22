@@ -1,0 +1,38 @@
+clc
+clear all
+
+%Read experimental data
+data5d8 = readmatrix("5d8.csv");
+data6d8 = readmatrix("6d8.csv");
+data7d8 = readmatrix("7d8.csv");
+
+x5d8 = data5d8(:,1);
+x6d8 = data6d8(:,1);
+x7d8 = data7d8(:,1);
+
+v5d8 = data5d8(:,2);
+v6d8 = data6d8(:,2);
+v7d8 = data7d8(:,2);
+
+
+
+
+
+%visualisation NGS normalized grid spacing
+figure(1);
+plot(exp_tyre_angle,Cp_exp_mears,'ko','MarkerSize',3,'MarkerFaceColor','k');
+hold on;
+plot(tyre_Angle,Cp_mediumOld_Data,'r' , LineWidth=1.5);
+hold on;
+hold on;
+plot(x_filtrado,y_filtrado,'g', LineWidth=2);
+hold on;
+plot(tyre_Angle,Cp_SM_Data, 'b' ,LineWidth=1.5);
+xlabel('Theta','Interpreter', 'latex'); 
+ylabel('Cp', 'Interpreter', 'latex');
+title('Mesh Convergence Analysis', 'Interpreter', 'latex'); 
+legend('Cp-Exp-Mears','Cp-Medium','Cp-MRF','Cp-SM', 'Location', 'North', 'Interpreter', 'latex'); 
+grid on;
+%xticks(h);               
+%yticks(sort(L)); 
+
